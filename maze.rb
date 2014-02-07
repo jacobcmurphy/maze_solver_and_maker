@@ -60,7 +60,6 @@ class Maze
 		end
 	end
 
-	# TODO - make this
 	# based off of http://www.mazeworks.com/mazegen/mazetut/
 	def redesign (rows = @num_rows, cols = @num_cols)
 		@num_rows = rows
@@ -69,9 +68,7 @@ class Maze
 		@cell_matrix.each { |cell| cell.add_neighbors @cell_matrix}
 
 
-		start_row = rand(0...@num_rows)
-		start_col = rand(0...@num_cols)
-		break_walls @cell_matrix[start_row, start_col]
+		break_walls @cell_matrix[rand(0...@num_rows), rand(0...@num_cols)]
 
 		@cell_matrix.each { |cell| cell.visited = false}
 
